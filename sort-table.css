@@ -13,3 +13,9 @@ th.sortable-column .indicator {
     font-size: smaller;
     margin-left: .5em;
 }
+
+@media print {
+    table.sortable-table caption p.indicator {
+        display: none;
+    }
+}

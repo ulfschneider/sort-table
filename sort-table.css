@@ -1,0 +1,15 @@
+th.sortable-column>button,
+table button.restore-order {
+    all: unset;
+    /*remove all button styling*/
+    cursor: pointer;
+}
+
+table button.restore-order {
+    font-weight: bold;
+}
+
+th.sortable-column .indicator {
+    font-size: smaller;
+    margin-left: .5em;
+}

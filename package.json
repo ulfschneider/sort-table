@@ -1,19 +1,26 @@
 {
-  "name": "sotable",
-  "version": "0.1.0",
-  "description": "Accessible, sortable HTML table",
-  "main": "sotable.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ulfschneider/sotable.git"
-  },
-  "author": "Ulf Schneider",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ulfschneider/sotable/issues"
-  },
-  "homepage": "https://github.com/ulfschneider/sotable#readme"
+    "name": "sotable",
+    "version": "0.1.0",
+    "description": "Accessible, sortable HTML table",
+    "main": "sotable.js",
+    "scripts": {
+        "build": "gulp",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ulfschneider/sotable.git"
+    },
+    "author": "Ulf Schneider",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ulfschneider/sotable/issues"
+    },
+    "homepage": "https://github.com/ulfschneider/sotable#readme",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.3.0",
+        "gulp-minify": "^3.1.0"
+    },
+    "dependencies": {}
 }

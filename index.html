@@ -15,7 +15,7 @@
             table * {
                 text-align: left;
             }
-            
+
             table td,
             table th {
                 padding: 0.5em;
@@ -30,15 +30,13 @@
             table th:last-child {
                 padding-right: 0;
             }
-
         </style>
 
         <link rel="stylesheet" href="sotable.css">
-        <script src="sotable.js"></script>
     </head>
 
     <body>
-        
+
         <h1>sotable</h1>
         <p>Accessible, sortable HTML table</p>
         <table>
@@ -78,5 +76,9 @@
                 </tr>
             </tbody>
         </table>
+        <script src="sotable.js"></script>
+        <script>
+            addEventListener('load', () => sotable());
+        </script>
     </body>
 </html>

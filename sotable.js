@@ -180,7 +180,7 @@ function insertColumnSortToggle(th) {
 }
 
 
-function tableSorter(options) {
+function sotable(options) {
     setConfig(options);
     document.querySelectorAll('tr:first-child>th:not(.no-sort)').forEach(th => {
 
@@ -208,5 +208,3 @@ function tableSorter(options) {
         }
     });
 }
-
-addEventListener('load', () => tableSorter());

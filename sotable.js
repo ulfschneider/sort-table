@@ -182,10 +182,10 @@ function insertColumnSortToggle(th) {
 
 function sotable(options) {
     setConfig(options);
-    document.querySelectorAll('tr:first-child>th:not(.no-sort)').forEach(th => {
+    document.querySelectorAll('tr:first-child>th:not(.no-so)').forEach(th => {
 
         let table = th.closest('table');
-        if (!table.classList.contains('no-sort')) {
+        if (!table.classList.contains('no-so')) {
             let columnIndex = getColumnIndex(th);
             let column = getColumn(table, columnIndex);
 

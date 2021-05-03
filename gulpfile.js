@@ -1,4 +1,4 @@
-const { src, dest, watch } = require("gulp");
+const { src, dest, series, watch } = require("gulp");
 const minify = require("gulp-minify");
 
 function minifyjs() {
@@ -8,7 +8,8 @@ function minifyjs() {
         .pipe(dest('./'));
 }
 
-exports.default = function() {
-    minifyjs();
-    watch('sotable.js', minifyjs)
+exports.watch = () => {
+    watch(['./sotable.js'], minifyjs)
 };
+
+exports.default = series([minifyjs]);

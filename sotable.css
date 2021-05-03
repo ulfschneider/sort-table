@@ -1,21 +1,21 @@
-th.sortable-column>button,
-table button.restore-order {
+th.sotable-column>button,
+table.sotable button.restore-order {
     all: unset;
     /*remove all button styling*/
     cursor: pointer;
 }
 
-table button.restore-order {
+table.sotable button.restore-order {
     font-weight: bold;
 }
 
-th.sortable-column .indicator {
+th.sotable-column .indicator {
     font-size: smaller;
     margin-left: .5em;
 }
 
 @media print {
-    table.sortable-table caption p.indicator {
+    table.sotable caption p.indicator {
         display: none;
     }
 }

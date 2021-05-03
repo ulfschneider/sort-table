@@ -1,2 +1,2 @@
-# sort-table
+# sotable
 Accessible, sortable HTML table

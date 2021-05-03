@@ -1,5 +1,5 @@
 //initial idea from https://www.delftstack.com/howto/javascript/javascript-sort-html-table/
-//and incorporated ideas from https://adrianroselli.com/2021/04/sortable-table-columns.html
+//and incorporated ideas from https://adrianroselli.com/2021/04/sotable-columns.html
 //plus my own
 const ROW_SELECTOR = 'tr:nth-child(n+2):not(table table tr)';
 
@@ -68,7 +68,7 @@ function comparer(columnIndex, asc) {
 
 function clearTableSortIndication(table) {
     //remove all sort indicators
-    table.querySelectorAll('th.sortable-column:not(table table th)').forEach(th => {
+    table.querySelectorAll('th.sotable-column:not(table table th)').forEach(th => {
         th.classList.remove('asc');
         th.classList.remove('dsc');
         th.ariaSort = null;
@@ -173,7 +173,7 @@ function insertColumnSortToggle(th) {
         //use a button toggle for accessibility
         th.innerHTML = `<button>${th.innerHTML}</button>`;
         //watch out for the css
-        //th.sortable-column>button is referring to
+        //th.sotable-column>button is referring to
         //this element
         return th.firstChild;
     }
@@ -193,8 +193,8 @@ function tableSorter(options) {
                 storeOrigTableOrder(table);
                 let toggle = insertColumnSortToggle(th);
                 if (toggle) {
-                    th.classList.add('sortable-column');
-                    table.classList.add('sortable-table');
+                    th.classList.add('sotable-column');
+                    table.classList.add('sotable');
                     indicateSortableTable(table);
                     toggle.addEventListener('click', () => {
                         let asc = !isColumnAsc(getColumn(table, columnIndex))

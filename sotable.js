@@ -7,12 +7,52 @@ let defaults = {
     indicatorAsc: 'ᐃ',
     indicatorDsc: 'ᐁ',
     sortHint: 'Sort the table by clicking on a column heading.',
-    restoreHint: 'Restore the original order by clicking <button>Restore Order</button>.'
+    restoreHint: 'Restore the original order by clicking <button>Restore Order</button>.',
+    whiteList: '',
+    blackList: ''
 }
 let settings;
+let whiteElements = [];
+let blackElements = [];
+
+function getArray(value) {
+    if (typeof value === 'string' || value instanceof String) {
+        return value.split(',');
+    } else {
+        return value;
+    }
+}
+
+function isWhitelisted(table) {
+    if (whiteElements.length) {
+        return whiteElements.includes(table);
+    }
+    return true;
+}
+
+function isBlacklisted(table) {
+    if (table.classList.contains('no-so')) {
+        return true;
+    }
+    if (blackElements.length) {
+        return blackElements.includes(table);
+    }
+    return false;
+}
 
 function setConfig(options) {
     settings = Object.assign({}, defaults, options);
+    if (settings.whiteList) {
+        for (let white of getArray(settings.whiteList)) {
+            whiteElements = whiteElements.concat(Array.from(document.querySelectorAll(white)));
+        }
+        console.log(whiteElements);
+    }
+    if (settings.blackList) {
+        for (let black of getArray(settings.blackList)) {
+            blackElements = blackElements.concat(Array.from(document.querySelectorAll(black)));
+        }
+    }
 }
 
 function getIndexedRowValue(row, columnIndex) {
@@ -53,7 +93,7 @@ function compareValues(value1, value2) {
 }
 
 function isColumnAsc(column) {
-    //is the column sorted ascending
+    //is the column sorted ascending?
     let values = column.filter(cell => cell.tagName != 'TH').map(cell => getCellValue(cell));
     let sortedValues = [...values].sort(compareValues);
     return String(values) == String(sortedValues);
@@ -179,13 +219,23 @@ function insertColumnSortToggle(th) {
     }
 }
 
+function hasAnyClass(table, classes) {
+    if (Array.isArray(classes)) {
+        for (let any of classes) {
+            if (table.classList.contains(any)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 function sotable(options) {
     setConfig(options);
     document.querySelectorAll('tr:first-child>th:not(.no-so)').forEach(th => {
 
         let table = th.closest('table');
-        if (!table.classList.contains('no-so')) {
+        if (!isBlacklisted(table) && isWhitelisted(table)) {
             let columnIndex = getColumnIndex(th);
             let column = getColumn(table, columnIndex);
 

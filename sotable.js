@@ -18,9 +18,11 @@ let blackElements = [];
 function getArray(value) {
     if (typeof value === 'string' || value instanceof String) {
         return value.split(',');
-    } else {
+    } else if (value) {
+        //assuming value is an array
         return value;
     }
+    return [];
 }
 
 function isWhitelisted(table) {
@@ -42,16 +44,12 @@ function isBlacklisted(table) {
 
 function setConfig(options) {
     settings = Object.assign({}, defaults, options);
-    if (settings.whiteList) {
-        for (let white of getArray(settings.whiteList)) {
-            whiteElements = whiteElements.concat(Array.from(document.querySelectorAll(white)));
-        }
-        console.log(whiteElements);
+
+    for (let white of getArray(settings.whiteList)) {
+        whiteElements = whiteElements.concat(Array.from(document.querySelectorAll(white)));
     }
-    if (settings.blackList) {
-        for (let black of getArray(settings.blackList)) {
-            blackElements = blackElements.concat(Array.from(document.querySelectorAll(black)));
-        }
+    for (let black of getArray(settings.blackList)) {
+        blackElements = blackElements.concat(Array.from(document.querySelectorAll(black)));
     }
 }
 

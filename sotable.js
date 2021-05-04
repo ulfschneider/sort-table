@@ -12,11 +12,11 @@ let defaults = {
     blackList: ''
 }
 let settings;
-let whiteElements = [];
-let blackElements = [];
+let whiteElements = new Set();
+let blackElements = new Set();
 
 function getArray(value) {
-    if (typeof value === 'string' || value instanceof String) {
+    if (value && typeof value === 'string' || value instanceof String) {
         return value.split(',');
     } else if (value) {
         //assuming value is an array
@@ -26,8 +26,8 @@ function getArray(value) {
 }
 
 function isWhitelisted(table) {
-    if (whiteElements.length) {
-        return whiteElements.includes(table);
+    if (whiteElements.size) {
+        return whiteElements.has(table);
     }
     return true;
 }
@@ -36,20 +36,22 @@ function isBlacklisted(table) {
     if (table.classList.contains('no-so')) {
         return true;
     }
-    if (blackElements.length) {
-        return blackElements.includes(table);
-    }
-    return false;
+
+    return blackElements.has(table);
 }
 
 function setConfig(options) {
     settings = Object.assign({}, defaults, options);
 
     for (let white of getArray(settings.whiteList)) {
-        whiteElements = whiteElements.concat(Array.from(document.querySelectorAll(white)));
+        for (let element of document.querySelectorAll(white)) {
+            whiteElements.add(element);
+        }
     }
     for (let black of getArray(settings.blackList)) {
-        blackElements = blackElements.concat(Array.from(document.querySelectorAll(black)));
+        for (let element of document.querySelectorAll(black)) {
+            blackElements.add(element);
+        }
     }
 }
 

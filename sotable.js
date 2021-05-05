@@ -1,3 +1,4 @@
+//authored by Ulf Schneider
 //initial idea from https://www.delftstack.com/howto/javascript/javascript-sort-html-table/
 //and incorporated ideas from https://adrianroselli.com/2021/04/sotable-columns.html
 //plus my own
@@ -12,8 +13,8 @@ let defaults = {
     blackList: ''
 }
 let settings;
-let whiteElements = new Set();
-let blackElements = new Set();
+let whiteElements;
+let blackElements;
 
 function getArray(value) {
     if (value && typeof value === 'string' || value instanceof String) {
@@ -42,6 +43,8 @@ function isBlacklisted(table) {
 
 function setConfig(options) {
     settings = Object.assign({}, defaults, options);
+    whiteElements = new Set();
+    blackElements = new Set();
 
     for (let white of getArray(settings.whiteList)) {
         for (let element of document.querySelectorAll(white)) {
@@ -219,17 +222,6 @@ function insertColumnSortToggle(th) {
     }
 }
 
-function hasAnyClass(table, classes) {
-    if (Array.isArray(classes)) {
-        for (let any of classes) {
-            if (table.classList.contains(any)) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
 function sotable(options) {
     setConfig(options);
     document.querySelectorAll('tr:first-child>th:not(.no-so)').forEach(th => {
@@ -258,3 +250,10 @@ function sotable(options) {
         }
     });
 }
+
+function refresh() {
+    sotable(settings);
+}
+
+export default sotable;
+export { sotable, refresh };

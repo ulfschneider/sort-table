@@ -11,7 +11,7 @@ Visit the [codepen](https://codepen.io/ulfschneider/pen/MWJdEPZ).
 Download [`sotable-min.js`](https://raw.githubusercontent.com/ulfschneider/sotable/master/sotable-min.js) from GitHub and put that file into your HTML page. Example: 
 
 
-HTML to embed sotable-min.js into a web page.
+HTML to embed `sotable-min.js` into a web page.
 ~~~html
 <script src="sotable-min.js"></script>
 <script>
@@ -22,12 +22,12 @@ addEventListener('load', () => sotable()); //activate sotable functionalty on lo
 To experiment and dive deeper, it´s best to clone the [entire repository](https://github.com/ulfschneider/sotable) and investigate the `index.html`, which serves as an example. sotable is also available as an [npm package](https://www.npmjs.com/package/sotable). 
 
 
-Install sotable npm package
+Install the sotable npm package
 ~~~shell
 npm i sotable
 ~~~
 
-Use sotable npm package
+Use the sotable npm package
 ~~~javascript
 const sotable = require('sotable');
 sotable.run();

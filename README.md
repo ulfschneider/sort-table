@@ -19,7 +19,7 @@ addEventListener('load', () => sotable()); //activate sotable functionalty on lo
 </script>
 ~~~~
 
-To experiment and dive deeper, it´s best to clone the [entire repository](https://github.com/ulfschneider/sotable) and investigate the `index.html`, which serves as an example. Sotable is also available as an [npm package](https://www.npmjs.com/package/sotable). 
+To experiment and dive deeper, it´s best to clone the [entire repository](https://github.com/ulfschneider/sotable) and investigate the `index.html`, which serves as an example. sotable is also available as an [npm package](https://www.npmjs.com/package/sotable). 
 
 
 Install sotable npm package
@@ -35,11 +35,11 @@ sotable.run();
 
 ## Function
 
-Sotable will query all tables on a web page and turn each table with `<th>` elements in the first table row into a sortable table. An explanation of the sort behavior will be added to the table `<caption>`. If the table doesn´t have a caption, it will be created.
+sotable will query all tables on a web page and turn each table with `<th>` elements in the first table row into a sortable table. An explanation of the sort behavior will be added to the table `<caption>`. If the table doesn´t have a caption, it will be created.
 
 ## Settings
 
-Sotable can run without any configuration, like in the example above. Nevertheless sotable can be called with a settings object. Example:
+sotable can run without any configuration, like in the example above. Nevertheless sotable can be called with a settings object. Example:
 
 Calling sotable with a settings object
 ~~~html
@@ -72,9 +72,9 @@ Many design decisions for proper accessibility of sotable stem from *[Sortable t
 
 - Use the table caption to indicate the table is sortable.
 - Use aria-sort to indicate what column is sorted into what direction.
-- Use buttons (and not links) inside of the `<th>` elements to activate sorting^[Generally, use buttons for performing an action on the site and use links for sending the user somewhere. Source: *[Six ways to make your site more accessible](/2020-08-31-six-ways-to-make-your-site-more-accessible/#markup)*].
+- Use buttons (and not links) inside of the `<th>` elements to activate sorting. (Generally, use buttons for performing an action on the site and use links for sending the user somewhere. Source: *[Six ways to make your site more accessible](https://ulf.codes/2020-08-31-six-ways-to-make-your-site-more-accessible/#markup)*).
 
 ## References 
 
-Sotable is influenced by *[JavaScript Sort HTML Table](https://www.delftstack.com/howto/javascript/javascript-sort-html-table/)*, which has a neat way of leveraging selectors for sorting, like `tr:nth-child(n+2)`. In this context, please refer to *[How nth-child works](https://css-tricks.com/how-nth-child-works/)* and *[:nth tester](https://css-tricks.com/examples/nth-child-tester/)*.
+sotable is influenced by *[JavaScript Sort HTML Table](https://www.delftstack.com/howto/javascript/javascript-sort-html-table/)*, which has a neat way of leveraging selectors for sorting, like `tr:nth-child(n+2)`. In this context, please refer to *[How nth-child works](https://css-tricks.com/how-nth-child-works/)* and *[:nth tester](https://css-tricks.com/examples/nth-child-tester/)*.
 

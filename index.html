@@ -2,87 +2,89 @@
 
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-    <title>sotable</title>
-    <meta name="description" content="Accessible, sortable HTML table">
-    <meta name="author" content="Ulf Schneider">
+        <title>sotable</title>
+        <meta name="description" content="Accessible, sortable HTML table">
+        <meta name="author" content="Ulf Schneider">
 
-    <style>
-        body {
-            padding: 1rem;
-        }
+        <style>
+            body {
+                padding: 1rem;
+            }
 
-        table * {
-            text-align: left;
-        }
+            table * {
+                text-align: left;
+            }
 
-        table td,
-        table th {
-            padding: 0.5em;
-        }
+            table td,
+            table th {
+                padding: 0.5em;
+            }
 
-        table td:first-child,
-        table th:first-child {
-            padding-left: 0;
-        }
+            table td:first-child,
+            table th:first-child {
+                padding-left: 0;
+            }
 
-        table td:last-child,
-        table th:last-child {
-            padding-right: 0;
-        }
-    </style>
+            table td:last-child,
+            table th:last-child {
+                padding-right: 0;
+            }
+        </style>
 
-    <link rel="stylesheet" href="sotable.css">
-</head>
+        <link rel="stylesheet" href="sotable.css">
+    </head>
 
-<body>
+    <body>
 
-    <h1>sotable</h1>
-    <p>Accessible, sortable HTML table</p>
-    <table>
-        <caption>The table is taken from <a href="https://ulf.codes/2012-07-10-five-dysfunctions/">
-                <em>Five dysfunctions of a team</em>
-            </a>.</caption>
-        <tbody>
-            <tr>
-                <th>Layer</th>
-                <th>Dysfunction</th>
-                <th>Behavioral pattern</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Absence of trust</td>
-                <td>Unwilling to be vulnerable within the group</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Fear of conflict</td>
-                <td>Seeking artificial harmony over a constructive passionate debate</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Lack of commitment</td>
-                <td>Feigning buy-in for group decisions creates ambiguity throughout the organization</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Avoidance of accountability</td>
-                <td>Ducking the responsibility to call peers on counterproductive behavior which sets low standards</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Inattention to results</td>
-                <td>Focusing on personal success, status, and ego before team success</td>
-            </tr>
-        </tbody>
-    </table>
+        <h1>sotable</h1>
+        <p>Accessible, sortable HTML table</p>
+        <table>
+            <caption>The table is taken from <a href="https://ulf.codes/2012-07-10-five-dysfunctions/">
+                    <em>Five dysfunctions of a team</em>
+                </a>.</caption>
+            <thead>
+                <tr>
+                    <th>Layer</th>
+                    <th>Dysfunction</th>
+                    <th>Behavioral pattern</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Absence of trust</td>
+                    <td>Unwilling to be vulnerable within the group</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Fear of conflict</td>
+                    <td>Seeking artificial harmony over a constructive passionate debate</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Lack of commitment</td>
+                    <td>Feigning buy-in for group decisions creates ambiguity throughout the organization</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Avoidance of accountability</td>
+                    <td>Ducking the responsibility to call peers on counterproductive behavior which sets low standards</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Inattention to results</td>
+                    <td>Focusing on personal success, status, and ego before team success</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <script src="sotable-min.js"></script>
-    <script>
-        addEventListener('load', () => sotable());
-    </script>
-</body>
+        <script src="sotable-min.js"></script>
+        <script>
+            addEventListener('load', () => sotable());
+        </script>
+    </body>
 
 </html>

@@ -1,6 +1,6 @@
 {
     "name": "sotable",
-    "version": "0.5.2",
+    "version": "0.5.3",
     "description": "Accessible, sortable HTML table",
     "keywords": ["HTML", "table", "sort"],
     "main": "sotable.js",

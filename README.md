@@ -8,7 +8,7 @@ Visit the [codepen](https://codepen.io/ulfschneider/pen/MWJdEPZ).
 
 ## Usage
 
-Download [`sotable-min.js`](https://raw.githubusercontent.com/ulfschneider/sotable/master/sotable-min.js) from GitHub and put that file into your HTML page. Example: 
+Download [`sotable-min.js`](https://raw.githubusercontent.com/ulfschneider/sotable/master/sotable-min.js) from GitHub and put that file into the `<head>` of your HTML page. Example: 
 
 
 HTML to embed `sotable-min.js` into a web page.
@@ -63,8 +63,8 @@ Explanation of the settings:
 - `indicatorDsc`: A symbol to indicate that a table column is sorted in descending order.
 - `sortHint`: The text to add to the table caption to inform the user how to sort the table.
 - `restoreHint`: The text to add to the table caption to inform the user how to revert sorting to the initial state. The `<button>` element will be injected with functionality to revert the sorting.
-- `whiteList`: A selector pattern (see *[Locating DOM elements using selectors](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)*), separated by comma, to select only those tables for sorting that fall into the whitelist query.
-- `blackList`: A selector pattern, separated by comma, to not select those tables for sorting that fall into the whitelist query. `blackList` has higher priority than `whiteList`. The selector `.noso` is generally available, even without adding it to the `blackList`. 
+- `whiteList`: A selector pattern (see *[Locating DOM elements using selectors](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)*), separated by comma, to select only those tables for sorting that fall into the whitelist query. The selector `.soso` is available, even without adding it to the `whiteList`. 
+- `blackList`: A selector pattern, separated by comma, to not select those tables for sorting that fall into the whitelist query. `blackList` has higher priority than `whiteList`. The selector `.noso` is available, even without adding it to the `blackList`. 
 
 ## Accessibility
 

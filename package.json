@@ -1,13 +1,17 @@
 {
     "name": "sotable",
-    "version": "0.5.5",
+    "version": "0.5.6",
     "description": "Accessible, sortable HTML table",
-    "keywords": ["HTML", "table", "sort"],
+    "keywords": [
+        "HTML",
+        "table",
+        "sort"
+    ],
     "main": "sotable.js",
     "scripts": {
         "build": "gulp",
         "watch": "gulp watch",
-        "serve": "concurrently \"gulp watch\" \"browser-sync start --server --files 'sotable.css' 'sotable.html'\"",
+        "dev": "concurrently \"gulp watch\" \"browser-sync start --server --files 'sotable.css' 'sotable.html'\"",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
